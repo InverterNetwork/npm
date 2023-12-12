@@ -1,8 +1,8 @@
 <div align="center">
 
 [![license](https://img.shields.io/badge/License-LGPL%20v3-blue)](/LICENSE.md)
-[![npm latest package](https://img.shields.io/npm/v/@inverternet/npm/latest.svg)](https://www.npmjs.com/package/@inverternet/npm)
-[![npm downloads](https://img.shields.io/npm/dm/@inverternet/npm.svg)](https://www.npmjs.com/package/@inverternet/npm)
+[![npm latest package](https://img.shields.io/npm/v/@inverter-network/npm/latest.svg)](https://www.npmjs.com/package/@inverter-network/npm)
+[![npm downloads](https://img.shields.io/npm/dm/@inverter-network/npm.svg)](https://www.npmjs.com/package/@inverter-network/npm)
 [![Follow on Twitter](https://img.shields.io/twitter/follow/inverternetwork.svg?label=follow+INVERTER)](https://twitter.com/inverternetwork)
 
 </div>
@@ -23,13 +23,13 @@ Check out the [Changelog](./CHANGELOG.md) to see what changed in the last releas
 Install dependencies with yarn:
 
 ```bash
-bun add -D @inverternet/npm
+bun add -D @inverter-network/npm
 ```
 
 or
 
 ```bash
-npm install -D @inverternet/npm
+npm install -D @inverter-network/npm
 ```
 
 ## How to make a release

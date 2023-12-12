@@ -17,7 +17,7 @@
     "package": "npm run build && npm pack",
     "test": "bun test",
     "test:cov": "bun test --coverage",
-    "addscope": "node tools/packagejson name @InverterNetwork/npm",
+    "addscope": "node tools/packagejson name @inverter-network/npm",
     "pre-commit": "lint-staged",
     "pre-push": "npm run build",
     "lint:fix": "eslint --ext .tsx --ext .ts ./src --fix",
