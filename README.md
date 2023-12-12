@@ -20,7 +20,7 @@ Check out the [Changelog](./CHANGELOG.md) to see what changed in the last releas
 
 ## Install dependencies
 
-Install dependencies with yarn:
+Install dependencies:
 
 ```bash
 bun add -D @inverter-network/npm
