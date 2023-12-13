@@ -1,15 +1,15 @@
 ### Installation
 
 ```bash
-bun add @inverter-network/npm
+bun add @inverter-network/<pkg_name>
 ```
 
 or
 
 ```bash
-npm install @inverter-network/npm
+npm install @inverter-network/<pkg_name>
 ```
 
 ### Summary
 
-This package contains npm configurations for INVERTER projects (https://github.com/InverterNetwork).
+This package contains <pkg_info> for [INVERTER Projects](https://github.com/InverterNetwork).

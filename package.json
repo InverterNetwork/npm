@@ -1,5 +1,5 @@
 {
-  "name": "npm",
+  "name": "@inverter-network/<pkg_name>",
   "version": "0.0.0",
   "description": "NPM Template for the INVERTER Projects",
   "main": "./dist/cjs/index.js",
@@ -10,14 +10,14 @@
     "import": "./dist/index.js"
   },
   "scripts": {
-    "dev": "bun run build --watch",
+    "dev": "nodemon",
     "watch": "tsc -w -p ./tsconfig.json",
     "build": "node tools/cleanup types && tsc -p ./tsconfig.json && tsc -p ./tsconfig.cjs.json",
     "clean": "node tools/cleanup",
     "package": "npm run build && npm pack",
     "test": "bun test",
     "test:cov": "bun test --coverage",
-    "addscope": "node tools/packagejson name @inverter-network/npm",
+    "addscope": "node tools/packagejson name @inverter-network/<pkg_name>",
     "pre-commit": "lint-staged",
     "pre-push": "npm run build",
     "lint:fix": "eslint --ext .tsx --ext .ts ./src --fix",
@@ -53,13 +53,13 @@
     "solidity",
     "evm"
   ],
-  "homepage": "https://github.com/InverterNetwork/npm",
+  "homepage": "https://github.com/InverterNetwork/<pkg_name>",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/InverterNetwork/npm.git"
+    "url": "git+ssh://git@github.com/InverterNetwork/<pkg_name>.git"
   },
   "bugs": {
-    "url": "https://github.com/InverterNetwork/npm"
+    "url": "https://github.com/InverterNetwork/<pkg_name>"
   },
   "dependencies": {},
   "devDependencies": {
@@ -67,15 +67,17 @@
     "@commitlint/config-conventional": "^18.4.3",
     "@typescript-eslint/eslint-plugin": "^6.14.0",
     "@typescript-eslint/parser": "^6.14.0",
+    "bun-types": "latest",
     "eslint": "^8.55.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.0.1",
     "husky": "^8.0.3",
     "lint-staged": "^15.2.0",
+    "nodemon": "^3.0.2",
+    "npm-run-all": "^4.1.5",
     "pinst": "^3.0.0",
     "prettier": "^3.1.1",
-    "standard-version": "^9.5.0",
-    "bun-types": "latest"
+    "standard-version": "^9.5.0"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
