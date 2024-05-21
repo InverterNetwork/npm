@@ -69,7 +69,7 @@ bun watch
 4. `git pull`
 5. `bun release: '' | alpha | beta` optionally add `-- --release-as minor | major`
 6. Make sure everything looks good (e.g. in CHANGELOG.md)
-7. Lastly follow the instructions given by release log
+7. Lastly run `bun release:pub`
 8. Done
 
 ## Summary
