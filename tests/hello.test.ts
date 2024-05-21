@@ -1,9 +1,14 @@
 import { expect, describe, it } from 'bun:test'
+import { writeLog } from '../tools/utils'
 
-describe('Hello Test Case', () => {
-  it('Should Return True', async () => {
-    const promise = new Promise<boolean>(() => true)
+describe('#EXEMPLE_TEST', () => {
+  it('Write a Hello log', async () => {
+    const promise = new Promise<boolean>((resolve) => resolve(true))
+
     const res = await promise
+
+    writeLog(res, 'Hello')
+
     expect(res).toBeTruthy()
   })
 })

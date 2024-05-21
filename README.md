@@ -7,13 +7,13 @@
 
 </div>
 
-## Inverter / ABIs
+## Inverter / NPM package Template
 
-Bun + Commit Safe + Latest as of 2023 Q3 => Npm Publish Template Repo
+Bun + Npm + Typescript + Commit / Release Pipeline
 
 ## Summary
 
-This package contains <pkg_info> for [INVERTER](https://github.com/InverterNetwork).
+This package contains < a template for devoloping for npm packages > for [INVERTER](https://github.com/InverterNetwork).
 Learn more about INVERTER on (https://inverter.network).
 
 Check out the [Changelog](./CHANGELOG.md) to see what changed in the last releases.
@@ -45,6 +45,20 @@ or
 npm install @inverter-network/<pkg_name>
 ```
 
+## Developing
+
+### Install Dependencies
+
+```bash
+bun install
+```
+
+### Watching TS Problems
+
+```bash
+bun watch
+```
+
 ## How to make a release
 
 **For the Maintainer**: Add NPM_TOKEN to the GitHub Secrets.
@@ -53,11 +67,11 @@ npm install @inverter-network/<pkg_name>
 2. Merge PR into main
 3. Checkout main
 4. `git pull`
-5. `npm run release`
+5. `bun release: '' | alpha | beta` optionally add `-- --release-as minor | major`
 6. Make sure everything looks good (e.g. in CHANGELOG.md)
-7. `npm run postRelease`
+7. Lastly follow the instructions given by release log
 8. Done
 
 ## Summary
 
-This package contains <pkg_info> for [INVERTER Projects](https://github.com/InverterNetwork).
+This package contains < a template for devoloping for npm packages > for [INVERTER projects](https://github.com/InverterNetwork).
