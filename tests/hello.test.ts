@@ -1,5 +1,5 @@
 import { expect, describe, it } from 'bun:test'
-import { writeLog } from '../tools/utils'
+import { writeLog } from '../tools'
 
 describe('#EXEMPLE_TEST', () => {
   it('Write a Hello log', async () => {
@@ -7,7 +7,11 @@ describe('#EXEMPLE_TEST', () => {
 
     const res = await promise
 
-    writeLog(res, 'Hello')
+    writeLog({
+      content: 'Hello',
+      label: 'EXEMPLE_TEST',
+      format: 'json',
+    })
 
     expect(res).toBeTruthy()
   })

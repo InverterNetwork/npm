@@ -1,48 +1,88 @@
 {
   "name": "@inverter-network/<pkg_name>",
+  "description": "INVERTER typescript NPM package template",
   "version": "0.0.0",
-  "author": "InverterNetwork <github@InverterNetwork>",
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/InverterNetwork/<pkg_name>.git"
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "default": "./dist/cjs/index.js"
+    },
+    "./package.json": "./package.json"
   },
   "main": "./dist/cjs/index.js",
-  "module": "./dist/index.js",
-  "dependencies": {
-    "type-fest-4": "npm:type-fest@^4"
-  },
-  "devDependencies": {
-    "@commitlint/cli": "^18",
-    "@commitlint/config-conventional": "^18",
-    "@types/bun": "^1",
-    "@types/lodash": "^4.17.1",
-    "@typescript-eslint/eslint-plugin": "^6",
-    "@typescript-eslint/parser": "^6",
-    "abitype": "^1",
-    "eslint-config-prettier": "^9",
-    "eslint-plugin-prettier": "^5",
-    "husky": "^9",
-    "lint-staged": "^15",
-    "pinst": "^3",
-    "prettier": "^3",
-    "standard-version": "^9"
-  },
-  "peerDependencies": {
-    "eslint": "^8",
-    "typescript": "^5"
-  },
-  "exports": {
-    "require": "./dist/cjs/index.js",
-    "import": "./dist/index.js"
-  },
-  "bugs": {
-    "url": "https://github.com/InverterNetwork/<pkg_name>/issues"
-  },
-  "description": "INVERTER typescript NPM package template",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "typings": "./dist/types/index.d.ts",
+  "sideEffects": false,
   "files": [
     "dist"
   ],
+  "directories": {
+    "tool": "tools",
+    "test": "tests"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "watch": "tsc -w",
+    "type-check": "tsc-files --pretty --project ./tsconfig.build.json --noEmit --module ESNext --declaration",
+    "build": "bun clean && bun build:cjs && bun build:esm && bun build:types",
+    "build:cjs": "tsc --project ./tsconfig.build.json --module commonjs --moduleResolution node --outDir ./dist/cjs --removeComments --verbatimModuleSyntax false && printf '{\"type\":\"commonjs\"}' > ./dist/cjs/package.json && tsc-alias --outDir ./dist/cjs && ts-add-js-extension --dir=dist/cjs --showchanges=false",
+    "build:esm": "tsc --project ./tsconfig.build.json --module ESNext --outDir ./dist/esm && printf '{\"type\": \"module\",\"sideEffects\":false}' > ./dist/esm/package.json && tsc-alias --outDir ./dist/esm && ts-add-js-extension --dir=dist/esm --showchanges=false",
+    "build:types": "tsc --project ./tsconfig.build.json --module ESNext --declarationDir ./dist/types --emitDeclarationOnly --declaration --declarationMap && tsc-alias --outDir ./dist/types",
+    "clean": "rm -rf dist tsconfig.tsbuildinfo tsconfig.build.tsbuildinfo",
+    "postinstall": "husky || true",
+    "prepack": "pinst --disable",
+    "package": "bun run build && npm pack",
+    "postpack": "pinst --enable",
+    "release": "standard-version -a",
+    "release:alpha": "standard-version -a --prerelease alpha --skip.changelog",
+    "release:beta": "standard-version -a --prerelease beta --skip.changelog",
+    "release:pub": "git push --follow-tags origin $(git rev-parse --abbrev-ref HEAD)"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "bun type-check",
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "peerDependencies": {
+    "eslint": "^8",
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "type-fest-4": "npm:type-fest@^4",
+    "debug": "^4.4.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^18.6.1",
+    "@commitlint/config-conventional": "^18.6.3",
+    "@types/bun": "^1.1.8",
+    "@types/debug": "^4.1.12",
+    "eslint-plugin-import-x": "^4.3.1",
+    "eslint-plugin-prettier": "^5.2.1",
+    "husky": "^9.1.5",
+    "lint-staged": "^15.2.10",
+    "pinst": "^3.0.0",
+    "prettier": "^3.3.3",
+    "standard-version": "^9.5.0",
+    "ts-add-js-extension": "^1.6.4",
+    "tsc-alias": "^1.8.10",
+    "tsc-files": "^1.1.4",
+    "typescript-eslint": "^8.6.0"
+  },
+  "license": "LGPL-3.0",
   "homepage": "https://github.com/InverterNetwork/<pkg_name>",
+  "authors": [
+    "InverterNetwork <github@InverterNetwork>"
+  ],
+  "repository": "InverterNetwork/<pkg_name>",
+  "bugs": {
+    "url": "https://github.com/InverterNetwork/<pkg_name>/issues"
+  },
   "keywords": [
     "InverterNetwork",
     "npm",
@@ -51,33 +91,5 @@
     "ethereum",
     "solidity",
     "evm"
-  ],
-  "license": "LGPL-3.0",
-  "lint-staged": {
-    "src/**/*.{ts,tsx}": [
-      "bun lint:fix",
-      "bun prettier:fix"
-    ]
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {
-    "watch": "tsc -w -p ./tsconfig.dev.json",
-    "build": "bun clean && tsc -p ./tsconfig.json && tsc -p ./tsconfig.cjs.json",
-    "clean": "rm -rf dist tsconfig.tsbuildinfo tsconfig.build.tsbuildinfo",
-    "postinstall": "husky",
-    "prepack": "pinst --disable",
-    "package": "bun run build && npm pack",
-    "postpack": "pinst --enable",
-    "pre-commit": "lint-staged",
-    "pre-push": "bun run build",
-    "lint:fix": "eslint --ext .tsx --ext .ts ./src --fix",
-    "prettier:fix": "prettier --write ./src/.",
-    "release": "standard-version -a",
-    "release:alpha": "standard-version -a --prerelease alpha --skip.changelog",
-    "release:beta": "standard-version -a --prerelease beta --skip.changelog",
-    "release:pub": "git push --follow-tags origin main"
-  },
-  "types": "./dist/index.d.ts"
+  ]
 }
