@@ -43,14 +43,18 @@
     "release:pub": "git push --follow-tags origin $(git rev-parse --abbrev-ref HEAD)"
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx}": [
-      "bun type-check",
+    "*.{ts,tsx}": [
+      "bun type-check"
+    ],
+    "*.{ts,tsx,js,jsx,mjs,cjs,json,md,css}": [
       "eslint --fix",
       "prettier --write"
     ]
   },
+  "resolutions": {
+    "eslint": "^9.17.0"
+  },
   "peerDependencies": {
-    "eslint": "^9.17.0",
     "typescript": "^5.7.2"
   },
   "dependencies": {
