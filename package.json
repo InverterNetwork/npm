@@ -1,5 +1,5 @@
 {
-  "name": "@inverter-network/<pkg_name>",
+  "name": "<pkg_name>",
   "description": "INVERTER typescript NPM package template",
   "version": "0.0.0",
   "exports": {
@@ -78,16 +78,15 @@
     "typescript-eslint": "^8.19.0"
   },
   "license": "LGPL-3.0",
-  "homepage": "https://github.com/InverterNetwork/<pkg_name>",
+  "homepage": "https://github.com/<github_username>/<pkg_name>",
   "authors": [
-    "InverterNetwork <github@InverterNetwork>"
+    "<github_username>"
   ],
-  "repository": "InverterNetwork/<pkg_name>",
+  "repository": "<github_username>/<pkg_name>",
   "bugs": {
-    "url": "https://github.com/InverterNetwork/<pkg_name>/issues"
+    "url": "https://github.com/<github_username>/<pkg_name>/issues"
   },
   "keywords": [
-    "InverterNetwork",
     "npm",
     "contracts",
     "web3",

@@ -1,20 +1,21 @@
 <div align="center">
 
-[![license](https://img.shields.io/badge/License-LGPL%20v3-blue)](/LICENSE.md)
-[![npm latest package](https://img.shields.io/npm/v/@inverter-network/<pkg_name>/latest.svg)](https://www.npmjs.com/package/@inverter-network/<pkg_name>)
-[![npm downloads](https://img.shields.io/npm/dm/@inverter-network/<pkg_name>.svg)](https://www.npmjs.com/package/@inverter-network/<pkg_name>)
-[![Follow on Twitter](https://img.shields.io/twitter/follow/inverternetwork.svg?label=follow+INVERTER)](https://twitter.com/inverternetwork)
+[![NPM Version][npm-version-image]][npm-url]
+[![Build Status][ci-image]][ci-url]
+[![License][license-image]][license-url]
+[![npm latest package][npm-latest-image]][npm-url]
+[![npm downloads][npm-downloads-image]][npm-url]
+[![Follow on Twitter][twitter-image]][twitter-url]
 
 </div>
 
 ## Inverter / NPM package Template
 
-Bun + Npm + Typescript + Commit / Release Pipeline
+Bun + Npm + Typescript + Standard Version + Flat Config Linting + Husky + Commit / Release Pipeline
 
 ## Summary
 
-This package contains < a template for devoloping for npm packages > for [INVERTER](https://github.com/InverterNetwork).
-Learn more about INVERTER on (https://inverter.network).
+This package contains < a template for devoloping for npm packages > for [brand_name](https://github.com/<github_username>).
 
 Check out the [Changelog](./CHANGELOG.md) to see what changed in the last releases.
 
@@ -33,16 +34,10 @@ bun upgrage
 
 ```
 
-Install dependencies:
+Install dependencie:
 
 ```bash
-bun add @inverter-network/<pkg_name>
-```
-
-or
-
-```bash
-npm install @inverter-network/<pkg_name>
+bun add <pkg_name>
 ```
 
 ## Developing
@@ -50,7 +45,7 @@ npm install @inverter-network/<pkg_name>
 ### Install Dependencies
 
 ```bash
-bun install
+bun i
 ```
 
 ### Watching TS Problems
@@ -67,11 +62,22 @@ bun watch
 2. Merge PR into main
 3. Checkout main
 4. `git pull`
-5. `bun release: '' | alpha | beta` optionally add `-- --release-as minor | major`
+5. `bun release: '' | alpha | beta` optionally add `-- --release-as minor | major | 0.0.1`
 6. Make sure everything looks good (e.g. in CHANGELOG.md)
 7. Lastly run `bun release:pub`
 8. Done
 
 ## Summary
 
-This package contains < a template for devoloping for npm packages > for [INVERTER projects](https://github.com/InverterNetwork).
+This package contains < a template for devoloping for npm packages > for [brand_name](https://github.com/<github_username>).
+
+[ci-image]: https://badgen.net/github/checks/<github_username>/<pkg_name>/main?label=ci
+[ci-url]: https://github.com/<github_username>/<pkg_name>/actions/workflows/ci.yaml
+[npm-url]: https://npmjs.org/package/<pkg_name>
+[npm-version-image]: https://badgen.net/npm/v/<pkg_name>
+[twitter-url]: https://twitter.com/<x_username>
+[twitter-image]: https://img.shields.io/twitter/follow/<x_username>.svg?label=follow+<brand_name>
+[license-image]: https://img.shields.io/badge/License-LGPL%20v3-blue
+[license-url]: ./LICENSE
+[npm-latest-image]: https://img.shields.io/npm/v/<pkg_name>/latest.svg
+[npm-downloads-image]: https://img.shields.io/npm/dm/<pkg_name>.svg
