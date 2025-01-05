@@ -49,7 +49,7 @@ bun watch
 
 ## How to make a release
 
-**For the Maintainer**: Add NPM_TOKEN to the GitHub Secrets.
+**For the Maintainer**: Add `NPM_TOKEN` to the GitHub Secrets.
 
 1. PR with changes
 2. Merge PR into main
@@ -60,9 +60,9 @@ bun watch
 7. Lastly run `bun release:pub`
 8. Done
 
-## Summary
+## License
 
-This package contains < a template for devoloping for npm packages > for [<brand_name>](https://github.com/<github_username>).
+This package is licensed - see the [LICENSE](./LICENSE) file for details.
 
 [ci-image]: https://badgen.net/github/checks/<github_username>/<pkg_name>/main?label=ci
 [ci-url]: https://github.com/<github_username>/<pkg_name>/actions/workflows/ci.yaml
