@@ -52,11 +52,10 @@
     ]
   },
   "resolutions": {
-    "eslint": "^9.17.0"
-  },
-  "peerDependencies": {
+    "eslint": "^9.17.0",
     "typescript": "^5.7.2"
   },
+  "peerDependencies": {},
   "dependencies": {
     "type-fest-4": "npm:type-fest@^4.31.0",
     "debug": "^4.4.0"
