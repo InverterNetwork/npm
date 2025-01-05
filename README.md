@@ -1,9 +1,8 @@
 <div align="center">
 
-[![NPM Version][npm-version-image]][npm-url]
+[![npm latest package][npm-latest-image]][npm-url]
 [![Build Status][ci-image]][ci-url]
 [![License][license-image]][license-url]
-[![npm latest package][npm-latest-image]][npm-url]
 [![npm downloads][npm-downloads-image]][npm-url]
 [![Follow on Twitter][twitter-image]][twitter-url]
 
@@ -15,40 +14,34 @@ Bun + Npm + Typescript + Standard Version + Flat Config Linting + Husky + Commit
 
 ## Summary
 
-This package contains < a template for devoloping for npm packages > for [brand_name](https://github.com/<github_username>).
+This package contains < a template for devoloping for npm packages > for [<brand_name>](https://github.com/<github_username>).
 
 Check out the [Changelog](./CHANGELOG.md) to see what changed in the last releases.
 
-## Install dependencies
-
-Install Bun ( bun is used for testing for primitives no bun is needed ):
-
-```bash
-# Supported on macOS, Linux, and WSL
-
-curl -fsSL https://bun.sh/install | bash
-
-# Upgrade Bun every once in a while
-
-bun upgrage
-
-```
-
-Install dependencie:
+## Install
 
 ```bash
 bun add <pkg_name>
 ```
 
+Install Bun ( bun is the default package manager for this project ( its optional ) ):
+
+```bash
+# Supported on macOS, Linux, and WSL
+curl -fsSL https://bun.sh/install | bash
+# Upgrade Bun every once in a while
+bun upgrage
+```
+
 ## Developing
 
-### Install Dependencies
+Install Dependencies:
 
 ```bash
 bun i
 ```
 
-### Watching TS Problems
+Watching TS Problems:
 
 ```bash
 bun watch
@@ -69,12 +62,11 @@ bun watch
 
 ## Summary
 
-This package contains < a template for devoloping for npm packages > for [brand_name](https://github.com/<github_username>).
+This package contains < a template for devoloping for npm packages > for [<brand_name>](https://github.com/<github_username>).
 
 [ci-image]: https://badgen.net/github/checks/<github_username>/<pkg_name>/main?label=ci
 [ci-url]: https://github.com/<github_username>/<pkg_name>/actions/workflows/ci.yaml
 [npm-url]: https://npmjs.org/package/<pkg_name>
-[npm-version-image]: https://badgen.net/npm/v/<pkg_name>
 [twitter-url]: https://twitter.com/<x_username>
 [twitter-image]: https://img.shields.io/twitter/follow/<x_username>.svg?label=follow+<brand_name>
 [license-image]: https://img.shields.io/badge/License-LGPL%20v3-blue
